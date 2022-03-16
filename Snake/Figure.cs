@@ -14,6 +14,7 @@ namespace Snake
 		{
 			foreach (Point p in pList)
 			{
+
 				p.Draw();
 			}
 		}
@@ -23,6 +24,7 @@ namespace Snake
 			foreach (var p in pList)
 			{
 				if (figure.IsHit(p))
+
 					return true;
 			}
 			return false;

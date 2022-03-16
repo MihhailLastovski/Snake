@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-	class Point
+	class Point : RndColor
 	{
+		
 		public int x;
 		public int y;
 		public char sym;
@@ -16,7 +17,7 @@ namespace Snake
 		{
 		}
 
-		public Point(int x, int y, char sym)
+		public Point(int x, int y, char sym) //конструктор, который берет 2 позиции на оси координат и какой символ поставится 
 		{
 			this.x = x;
 			this.y = y;
@@ -49,9 +50,10 @@ namespace Snake
 				y = y + offset;
 			}
 		}
-
+		
 		public bool IsHit(Point p)
 		{
+			Console.ForegroundColor = GetRandomConsoleColor();
 			return p.x == this.x && p.y == this.y;
 		}
 
@@ -59,6 +61,8 @@ namespace Snake
 		{
 			Console.SetCursorPosition(x, y);
 			Console.Write(sym);
+			
+			
 		}
 
 		public void Clear()
