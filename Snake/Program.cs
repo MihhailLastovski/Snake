@@ -13,7 +13,10 @@ namespace Snake
 
 		static void Main(string[] args)
 		{
-			Sound sounds = new Sound();
+			var filefolder = System.IO.Path.Combine(Directory.GetCurrentDirectory().ToString(), "/resources/theme.mp3");
+         
+			Sound sounds = new Sound(filefolder);
+			System.Threading.Thread.Sleep(100);
 			sounds.Play();
 			Console.SetWindowSize(80, 25);
 

@@ -12,12 +12,7 @@ namespace Snake
         private string resourcesFoler;
         public Params()
         {
-            var ind = Directory.GetCurrentDirectory().ToString()
-                .IndexOf("bin", StringComparison.Ordinal);
-            string binFolder =
-                Directory.GetCurrentDirectory().ToString().Substring(0, ind)
-                .ToString();
-            resourcesFoler = binFolder + "resources\\";
+            resourcesFoler = Directory.GetCurrentDirectory().ToString();
         }
         public string GetResourceFolder()
         {

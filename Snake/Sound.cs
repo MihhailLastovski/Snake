@@ -13,9 +13,7 @@ namespace Snake
         WindowsMediaPlayer player = new WindowsMediaPlayer();
         private string pathToMedia;
 
-        public Sound()
-        {
-        }
+
 
         public Sound(string pathToResources)
         {
@@ -23,14 +21,11 @@ namespace Snake
         }
         public void Play()
         {
-            player.URL = pathToMedia + "theme.mp3";
-            player.settings.volume = 100;
-            player.controls.play();
-            player.settings.setMode("loop", true);
+            System.Media.SoundPlayer superplayer = new System.Media.SoundPlayer(pathToMedia);
         }
         public void Play(string songName)
         {
-            player.URL = pathToMedia + songName + ".mp3";
+            player.URL = pathToMedia + songName + "theme.mp3";
             player.controls.play();
         }
         public void Deads()
