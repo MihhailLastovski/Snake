@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+
 
 namespace Snake
 {
 	class Program
 	{
+
 		static void Main(string[] args)
 		{
+			Sound sounds = new Sound();
+			sounds.Play();
 			Console.SetWindowSize(80, 25);
 
 			Walls walls = new Walls(80, 25);
@@ -48,29 +53,12 @@ namespace Snake
 					snake.HandleKey(key.Key);
 				}
 			}
-			WriteGameOver();
+			GameOver gameOver = new GameOver();
+			gameOver.WriteGameOver();
 			Console.ReadLine();
 		}
 
 
-		static void WriteGameOver()
-		{
-			int xOffset = 25;
-			int yOffset = 8;
-			Console.ForegroundColor = ConsoleColor.Red;
-			Console.SetCursorPosition(xOffset, yOffset++);
-			WriteText("============================", xOffset, yOffset++);
-			WriteText("    G A M E    O V E R", xOffset + 1, yOffset++);
-			yOffset++;
-			WriteText("Автор: Mihhail Lastovski", xOffset + 2, yOffset++);
-			WriteText("============================", xOffset, yOffset++);
-		}
-
-		static void WriteText(String text, int xOffset, int yOffset)
-		{
-			Console.SetCursorPosition(xOffset, yOffset);
-			Console.WriteLine(text);
-		}
-
-	}
+		
+    }
 }

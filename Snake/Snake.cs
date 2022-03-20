@@ -10,7 +10,6 @@ namespace Snake
 	class Snake : Figure
 	{
 		Direction direction; //переменная типа класса enum
-
 		public Snake(Point tail, int length, Direction _direction) //
 		{
 			direction = _direction;
@@ -64,15 +63,11 @@ namespace Snake
 			else if (key == ConsoleKey.UpArrow)
 				direction = Direction.UP;
 		}
-		int a = 1;
 		public bool Eat(Point food)
 		{
 			Point head = GetNextPoint();
 			if (head.IsHit(food))
 			{
-				//StreamWriter sw = new StreamWriter("C:\Users\opilane\source\repos\Lastovski_TARpv21\Snake\Snake\Points.txt");
-				sw.WriteLine(a);
-				a++;
 				food.sym = head.sym;
 				pList.Add(food);
 				return true;
@@ -80,5 +75,6 @@ namespace Snake
 			else
 				return false;
 		}
+
 	}
 }
