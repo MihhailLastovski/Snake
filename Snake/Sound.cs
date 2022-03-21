@@ -10,7 +10,7 @@ namespace Snake
 {
     public class Sound
     {
-        WindowsMediaPlayer player = new WindowsMediaPlayer();
+        System.Media.SoundPlayer player = new System.Media.SoundPlayer();
         private string pathToMedia;
 
 
@@ -21,24 +21,22 @@ namespace Snake
         }
         public void Play()
         {
-            System.Media.SoundPlayer superplayer = new System.Media.SoundPlayer(pathToMedia);
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(pathToMedia);
         }
         public void Play(string songName)
         {
-            player.URL = pathToMedia + songName + "theme.mp3";
-            player.controls.play();
+            player.SoundLocation = pathToMedia + songName + "theme.mp3";
+            player.Play();
         }
         public void Deads()
         {
-            player.URL = pathToMedia + "dead.mp3";
-            player.settings.volume = 100;
-            player.controls.play();
+            player.SoundLocation = pathToMedia + "dead.mp3";
+            player.Play();
         }
         public void PlayEat()
         {
-            player.URL = pathToMedia + "eat.mp3";
-            player.settings.volume = 100;
-            player.controls.play();
+            player.SoundLocation = pathToMedia + "eat.mp3";
+            player.Play();
         }
     }
 }

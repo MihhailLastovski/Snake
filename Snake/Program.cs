@@ -13,15 +13,15 @@ namespace Snake
 
 		static void Main(string[] args)
 		{
-			var filefolder = System.IO.Path.Combine(Directory.GetCurrentDirectory().ToString(), "/resources/theme.mp3");
-         
-			Sound sounds = new Sound(filefolder);
-			System.Threading.Thread.Sleep(100);
+			string path = Directory.GetCurrentDirectory();
+			Console.WriteLine(path);
+			Sound sounds = new Sound("theme.exe");
 			sounds.Play();
+			System.Threading.Thread.Sleep(10000);
 			Console.SetWindowSize(80, 25);
 
 			Walls walls = new Walls(80, 25);
-			
+
 			walls.Draw();
 
 			//точки			
@@ -62,6 +62,6 @@ namespace Snake
 		}
 
 
-		
-    }
+
+	}
 }
