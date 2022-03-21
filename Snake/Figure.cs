@@ -18,18 +18,18 @@ namespace Snake
 			}
 		}
 
-		internal bool IsHit(Figure figure) //метод для проверки столкновения, который берет объект класса
+		internal bool IsHit(Figure figure) //метод для проверки столкновения, который берет объект типа класса Figure. Возвращает bool значение
 		{
-			foreach (var p in pList)
+			foreach (var p in pList) //берет каждое значение из списка и приравнивает к p 
 			{
-				if (figure.IsHit(p))
+				if (figure.IsHit(p)) //если фигура столкнулась с точко, то возвращает true, в ином случае false
 
 					return true;
 			}
 			return false;
 		}
 
-		private bool IsHit(Point point)
+		private bool IsHit(Point point) //метод для проверки столкновения, который берет объект типа класса Point. Возвращает bool значение
 		{
 			foreach (var p in pList)
 			{
