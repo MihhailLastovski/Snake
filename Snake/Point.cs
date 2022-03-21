@@ -49,13 +49,13 @@ namespace Snake
 			}
 		}
 		
-		public bool IsHit(Point p)
+		public bool IsHit(Point p) 
 		{
 			Console.ForegroundColor = GetRandomConsoleColor();
 			return p.x == this.x && p.y == this.y;
 		}
 
-		public void Draw()
+		public void Draw() //метод для отрисовки точек
 		{
 			Console.SetCursorPosition(x, y);
 			Console.Write(sym);
@@ -63,7 +63,7 @@ namespace Snake
 			
 		}
 
-		public void Clear()
+		public void Clear() //метод для очистки, который вместо символа ставит пустое место(пробел)
 		{
 			sym = ' ';
 			Draw();

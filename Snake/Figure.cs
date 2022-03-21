@@ -6,20 +6,19 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-	class Figure
+	class Figure 
 	{
-		protected List<Point> pList;
-
-		public void Draw()
+		protected List<Point> pList; //поле типа List, в котором будут содержаться значения типа Point. Protected -  по сути является закрытым полем, но его могут использовать классы наследники
+		public void Draw() //метод отрисовки точек
 		{
-			foreach (Point p in pList)
+			foreach (Point p in pList) //отрисовывает каждое значение p из списка pList
 			{
 
 				p.Draw();
 			}
 		}
 
-		internal bool IsHit(Figure figure)
+		internal bool IsHit(Figure figure) //метод для проверки столкновения, который берет объект класса
 		{
 			foreach (var p in pList)
 			{

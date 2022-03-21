@@ -8,7 +8,7 @@ namespace Snake
 {
 	enum Direction //класс enum или же класс перечисление. В нем перечисляются направления
 	{
-		LEFT,
+		LEFT, //направления
 		RIGHT,
 		UP,
 		DOWN
