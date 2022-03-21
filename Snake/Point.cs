@@ -9,31 +9,29 @@ namespace Snake
 	class Point : RndColor
 	{
 		
-		public int x;
-		public int y;
-		public char sym;
+		public int x; //поле значение x 
+		public int y; //поле значения y
+		public char sym; //поле символа
 
-		public Point()
-		{
-		}
 
-		public Point(int x, int y, char sym) //конструктор, который берет 2 позиции на оси координат и какой символ поставится 
+
+		public Point(int x, int y, char sym) //конструктор, который берет 2 позиции на оси координат и символ точки 
 		{
-			this.x = x;
+			this.x = x; //ключевое слово this. используется для того, чтобы программа поняла, что обращаемся к полям, а не к аргументу
 			this.y = y;
 			this.sym = sym;
 		}
 
-		public Point(Point p)
+		public Point(Point p) //конструктор, который берет объект типа Point и обновляет его значения
 		{
-			x = p.x;
+			x = p.x; //заменяет старое значение на новое значение
 			y = p.y;
 			sym = p.sym;
 		}
 
-		public void Move(int offset, Direction direction)
+		public void Move(int offset, Direction direction) //метод движения
 		{
-			if (direction == Direction.RIGHT)
+			if (direction == Direction.RIGHT) //конструкция if для определения направления, если направление вправо, то переменную x увеличиваем на offset 
 			{
 				x = x + offset;
 			}

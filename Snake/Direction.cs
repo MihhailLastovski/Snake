@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-	enum Direction
+	enum Direction //класс enum или же класс перечисление. В нем перечисляются направления
 	{
 		LEFT,
 		RIGHT,
