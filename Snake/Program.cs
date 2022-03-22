@@ -13,6 +13,8 @@ namespace Snake
 
 		static void Main(string[] args)
 		{
+			Menu menu = new Menu(); 
+			menu.Main();
 			Score score = new Score();
 			Params param = new Params();
 			Sound soundtheme = new Sound(param.GetResourceFolder());
@@ -24,6 +26,8 @@ namespace Snake
 			Walls walls = new Walls(80, 25);
 
 			walls.Draw();
+			Console.SetCursorPosition(70, 23);
+			Console.WriteLine($"Счет: 0");
 
 			//точки			
 			Point p = new Point(4, 5, '~');
