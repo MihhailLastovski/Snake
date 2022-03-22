@@ -8,13 +8,13 @@ namespace Snake
 {
 	class HorizontalLine : Figure
 	{
-		public HorizontalLine(int xLeft, int xRight, int y, char sym)
+		public HorizontalLine(int xLeft, int xRight, int y, char sym) //конструктор, принимающий значения точки от, который начнет отрисовываться линия xLeft и на какой точки заканчивается хRight. Также берет координату y, на которой символ будет нарисован и какой символ sym
 		{
-			pList = new List<Point>();
-			for (int x = xLeft; x <= xRight; x++)
+			pList = new List<Point>(); //создается список точек
+			for (int x = xLeft; x <= xRight; x++) //цикл будет исполняться, пока xLeft не будет равен xRight
 			{
-				Point p = new Point(x, y, sym);
-				pList.Add(p);
+				Point p = new Point(x, y, sym); //создание объекта p класса Point
+				pList.Add(p); //добавление p в список
 			}
 		}
 	}

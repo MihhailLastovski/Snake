@@ -8,14 +8,15 @@ using static System.Console;
 
 namespace Snake
 {
-    public class Menu : RndColor
+    public class Menu : RndColor //двойной наследник. Наследует класс RndColor, который наследует класс Score
     {
-        public void Main()
+        public void Main() //основной метод
         {
-            bool answer = false;
-            Console.SetWindowSize(120, 40);
-            do
+            bool answer = false; //поле типа bool
+            Console.SetWindowSize(120, 40); //установка размера окна
+            do //цикл do while для проверки выполнения условия
             {
+                //вывод надписей
                 Console.WriteLine(@"
 
  ________  ________   ________  ___  __    _______           ________  ________  _____ ______   _______      
@@ -54,14 +55,14 @@ namespace Snake
    |        |_ >< |  |_ 
                         
 ");
-                var input = Console.ReadKey();
-                switch (input.Key)
+                var input = Console.ReadKey(); //чтение нажатой клавиши
+                switch (input.Key) //Конструкция switch case позволяет на основе значение переменной выбрать что будет происходить
                 {
-                    case ConsoleKey.D1:
-                        answer = true;
-                        Clear();
-                        ShowSimplePercentage();
-                        break;
+                    case ConsoleKey.D1: //если переменная равна D1(1), то
+                        answer = true; //переменная становится true
+                        Clear(); //очищается консоль
+                        ShowSimplePercentage(); //исполняется метод
+                        break; //завершение цикла конструкции switch case
                     case ConsoleKey.D2:
                         answer = true;
                         Info();
@@ -72,26 +73,26 @@ namespace Snake
                         break;
                     case ConsoleKey.D4:
                         answer = true;
-                        ShowSpinner();
-                        Environment.Exit(0);
+                        ExitCons();
+                        Environment.Exit(0); //выход из консоли
                         break;
 
                 }
                 Clear();
-            } while (answer!=true);
+            } while (answer!=true); //пока переменная не равна true, то из цикла не выйти
             
-            void Info()
+            void Info() //метод для вывода информации
             {
                 Clear();
                 Console.WriteLine("Author -> Mihhail Lastovski\nGroup -> TARpv21");
                 Console.ReadKey(true);
                 Clear();
-                Console.ForegroundColor = ConsoleColor.White;
-                Main();
+                Console.ForegroundColor = ConsoleColor.White; //изменение цвета переднего плана консоли
+                Main(); //возвращает в основное меню
             }
-            void GoodStuffs()
+            void GoodStuffs() //метод для вывода всяких преколов :)
             {
-                Clear();
+                Clear(); //очистка
                 Console.WriteLine(@"
  .----------------.  .----------------.  .----------------.  .----------------.  .----------------. 
 | .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |
@@ -105,7 +106,7 @@ namespace Snake
 | '--------------' || '--------------' || '--------------' || '--------------' || '--------------' |
  '----------------'  '----------------'  '----------------'  '----------------'  '----------------' 
 ");
-                Thread.Sleep(1500);
+                Thread.Sleep(1500); //таймер
                 MultiLineAnimation();
                 Clear();
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -151,27 +152,27 @@ namespace Snake
                 Console.ForegroundColor = ConsoleColor.White;
                 Main();
             }
-            void ShowSimplePercentage()
+            void ShowSimplePercentage() //метод нашел в интернете, отрисовывает анимацию процентов
             {
-                for (int i = 0; i <= 100; i++)
+                for (int i = 0; i <= 100; i++) //цикл пока i не будет равна 100
                 {
-                    Console.ForegroundColor = GetRandomConsoleColor();
-                    Console.Write($"\rProgress: {i}%   ");
-                    Thread.Sleep(25);
+                    Console.ForegroundColor = GetRandomConsoleColor(); //использование, созданного мной класса RndColor для того, чтобы проценты были разноцветными
+                    Console.Write($"\rProgress: {i}%   "); //вывод. \r заменяет строку на строку
+                    Thread.Sleep(25); //таймер
                 }
 
                 Console.Write("\rDone!          ");
                 Thread.Sleep(1000);
                 Console.ForegroundColor = ConsoleColor.White;
             }
-            void MultiLineAnimation()
+            void MultiLineAnimation() //этот метод также нашел в интернете, делает анимацию "колыбели Ньютона"
             {
                 var counter = 0;
-                for (int i = 0; i < 30; i++)
+                for (int i = 0; i < 30; i++) //цикл пока не будет равен 30
                 {
                     Console.Clear();
 
-                    switch (counter % 4)
+                    switch (counter % 4) //получает остаток
                     {
                         case 0:
                             {
@@ -211,11 +212,11 @@ namespace Snake
                     Thread.Sleep(200);
                 }
             }
-            void ShowSpinner()
+            void ExitCons() //метод схожий с методом выше (MultiLineAnimation)
             {
-                Clear();
+                Clear(); 
                 var counter = 0;
-                for (int i = 0; i < 50; i++)
+                for (int i = 0; i < 50; i++) 
                 {
                     Console.ForegroundColor = GetRandomConsoleColor();
                     switch (counter % 4)
@@ -225,7 +226,7 @@ namespace Snake
                         case 2: Console.Write("\\"); break;
                         case 3: Console.Write("|"); break;
                     }
-                    Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+                    Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop); //сделано для возврата курсора в изначальное положение
                     counter++;
                     Thread.Sleep(100);
                 }

@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-    public class Score
+    public class Score //класс для подсчета очков
     {
-        public int a = 0;
-        public Score() 
+        public int a = 0; //поле типа int
+        public Score() //пустой конструктор
         {
         }
-        public void Vivod()
+        public void Vivod() //метод вывода очков
         {
-            a++;
-            Console.SetCursorPosition(70, 23);
-            Console.WriteLine($"Score: {a}");
+            a++; //прибавление очков
+            Console.SetCursorPosition(70, 23); //установка позиции курсора
+            Console.WriteLine($"Score: {a}"); //вывод
         }
 
     }
