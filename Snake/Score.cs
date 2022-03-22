@@ -8,7 +8,7 @@ namespace Snake
 {
     public class Score
     {
-        int a = 0;
+        public int a = 0;
         public Score() 
         {
         }
@@ -16,8 +16,9 @@ namespace Snake
         {
             a++;
             Console.SetCursorPosition(70, 23);
-            Console.WriteLine($"Счет: {a}");
+            Console.WriteLine($"Score: {a}");
         }
+
     }
         
     

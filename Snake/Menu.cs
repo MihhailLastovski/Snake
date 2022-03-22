@@ -12,8 +12,11 @@ namespace Snake
     {
         public void Main()
         {
+            bool answer = false;
             Console.SetWindowSize(120, 40);
-            Console.WriteLine(@"
+            do
+            {
+                Console.WriteLine(@"
 
  ________  ________   ________  ___  __    _______           ________  ________  _____ ______   _______      
 |\   ____\|\   ___  \|\   __  \|\  \|\  \ |\  ___ \         |\   ____\|\   __  \|\   _ \  _   \|\  ___ \     
@@ -26,56 +29,64 @@ namespace Snake
                                                                                                              
                                                                                                              
 ");
-            Console.WriteLine(@"
+                Console.WriteLine(@"
 
            __               
  /| __ __ (_ _|_  _. ._ _|_ 
   |       __) |_ (_| |   |_ 
                             
 ");
-            Console.WriteLine(@"
+                Console.WriteLine(@"
  _       ___      _    
   ) __ __ |  ._ _|_ _  
  /_      _|_ | | | (_) 
                        
 ");
-            Console.WriteLine(@"
+                Console.WriteLine(@"
  _         __                                               _   _   
  _) __ __ (_   _  ._ _   _     _   _   _   _|    _ _|_    _|_ _|_ _ 
  _)       __) (_) | | | (/_   (_| (_) (_) (_|   _>  |_ |_| |   | _> 
                                _|                                   
 ");
-            Console.WriteLine(@"
+                Console.WriteLine(@"
              _          
  |_|_ __ __ |_    o _|_ 
    |        |_ >< |  |_ 
                         
 ");
-            var input = Console.ReadKey();
-            switch (input.Key)
-            {
-                case ConsoleKey.D1:
-                    Clear();
-                    ShowSimplePercentage();
-                    break;
-                case ConsoleKey.D2:
-                    Info();
-                    break;
-                case ConsoleKey.D3:
-                    GoodStuffs();
-                    break;
-                case ConsoleKey.D4:
-                    ShowSpinner();
-                    Environment.Exit(0);
-                    break;
-                default:
-                    break;
-            }
+                var input = Console.ReadKey();
+                switch (input.Key)
+                {
+                    case ConsoleKey.D1:
+                        answer = true;
+                        Clear();
+                        ShowSimplePercentage();
+                        break;
+                    case ConsoleKey.D2:
+                        answer = true;
+                        Info();
+                        break;
+                    case ConsoleKey.D3:
+                        answer = true;
+                        GoodStuffs();
+                        break;
+                    case ConsoleKey.D4:
+                        answer = true;
+                        ShowSpinner();
+                        Environment.Exit(0);
+                        break;
+
+                }
+                Clear();
+            } while (answer!=true);
+            
             void Info()
             {
                 Clear();
                 Console.WriteLine("Author -> Mihhail Lastovski\nGroup -> TARpv21");
                 Console.ReadKey(true);
+                Clear();
+                Console.ForegroundColor = ConsoleColor.White;
                 Main();
             }
             void GoodStuffs()
@@ -136,6 +147,8 @@ namespace Snake
       |__\\_______________`.__.-~___________~-.__.'_______________//__|");
 
                 Console.ReadKey(true);
+                Clear();
+                Console.ForegroundColor = ConsoleColor.White;
                 Main();
             }
             void ShowSimplePercentage()
@@ -148,6 +161,8 @@ namespace Snake
                 }
 
                 Console.Write("\rDone!          ");
+                Thread.Sleep(1000);
+                Console.ForegroundColor = ConsoleColor.White;
             }
             void MultiLineAnimation()
             {

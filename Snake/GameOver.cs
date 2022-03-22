@@ -20,10 +20,12 @@ namespace Snake
 			System.Threading.Thread.Sleep(500);
 			WriteText("    G A M E    O V E R", xOffset + 1, yOffset++);
 			System.Threading.Thread.Sleep(500);
+			WriteText($"	    Score:{a.ToString()}", xOffset, yOffset++);
+			WriteText($"	Press something", xOffset, yOffset++);
 			WriteText("============================", xOffset, yOffset++);
 		}
 
-		static void WriteText(String text, int xOffset, int yOffset)
+        static void WriteText(String text, int xOffset, int yOffset)
 		{
 			Console.SetCursorPosition(xOffset, yOffset);
 			Console.WriteLine(text);
