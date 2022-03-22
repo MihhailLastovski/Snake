@@ -49,7 +49,7 @@ namespace Snake
 			}
 		}
 		
-		public bool IsHit(Point p) 
+		public bool IsHit(Point p) //метод для проверки сталкивания
 		{
 			Console.ForegroundColor = GetRandomConsoleColor();
 			return p.x == this.x && p.y == this.y;

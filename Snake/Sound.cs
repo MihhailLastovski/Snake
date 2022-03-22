@@ -20,7 +20,7 @@ namespace Snake
         public void Play()
         {
             player.URL = pathToMedia + "theme.mp3";
-            player.settings.volume = 35;
+            player.settings.volume = 5;
             player.controls.play();
             player.settings.setMode("loop", true);
         }
@@ -40,6 +40,10 @@ namespace Snake
             player.URL = pathToMedia + "dead.mp3";
             player.settings.volume = 100;
             player.controls.play();
+        }
+        public void VolumePlay() 
+        {
+            player.settings.volume = 0;
         }
     }
 }

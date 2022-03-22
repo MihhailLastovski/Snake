@@ -14,8 +14,8 @@ namespace Snake
 		static void Main(string[] args)
 		{
 			Params param = new Params();
-			Sound sound = new Sound(param.GetResourceFolder());
-			sound.Play(); 
+			Sound soundtheme = new Sound(param.GetResourceFolder());
+			soundtheme.Play(); 
 			Sound soundeat = new Sound(param.GetResourceFolder());
 			Sound sounddead = new Sound(param.GetResourceFolder());
 			Console.SetWindowSize(80, 25);
@@ -38,6 +38,7 @@ namespace Snake
 				if (walls.IsHit(snake) || snake.IsHitTail())
 				{
 					sounddead.Deads();
+					soundtheme.VolumePlay();
 					break;
 				}
 				if (snake.Eat(food))
