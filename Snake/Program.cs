@@ -13,6 +13,7 @@ namespace Snake
 
 		static void Main(string[] args)
 		{
+			Score score = new Score();
 			Params param = new Params();
 			Sound soundtheme = new Sound(param.GetResourceFolder());
 			soundtheme.Play(); 
@@ -43,6 +44,7 @@ namespace Snake
 				}
 				if (snake.Eat(food))
 				{
+					score.Vivod();
 					soundeat.PlayEat();
 					food = foodCreator.CreateFood();
 					food.Draw();

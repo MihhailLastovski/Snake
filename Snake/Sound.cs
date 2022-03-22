@@ -20,7 +20,7 @@ namespace Snake
         public void Play()
         {
             player.URL = pathToMedia + "theme.mp3";
-            player.settings.volume = 5;
+            player.settings.volume = 3;
             player.controls.play();
             player.settings.setMode("loop", true);
         }
