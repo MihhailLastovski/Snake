@@ -13,11 +13,11 @@ namespace Snake
 
 		static void Main(string[] args)
 		{
-			string path = Directory.GetCurrentDirectory();
-			Console.WriteLine(path);
-			Sound sounds = new Sound("theme.exe");
-			sounds.Play();
-			System.Threading.Thread.Sleep(10000);
+			Params param = new Params();
+			Sound sound = new Sound(param.GetResourceFolder());
+			sound.Play(); 
+			Sound soundeat = new Sound(param.GetResourceFolder());
+			Sound sounddead = new Sound(param.GetResourceFolder());
 			Console.SetWindowSize(80, 25);
 
 			Walls walls = new Walls(80, 25);
@@ -25,11 +25,11 @@ namespace Snake
 			walls.Draw();
 
 			//точки			
-			Point p = new Point(4, 5, '*');
+			Point p = new Point(4, 5, '~');
 			Snake snake = new Snake(p, 4, Direction.RIGHT);
 			snake.Draw();
 
-			FoodCreator foodCreator = new FoodCreator(80, 25, '$');
+			FoodCreator foodCreator = new FoodCreator(80, 25, '#');
 			Point food = foodCreator.CreateFood();
 			food.Draw();
 
@@ -37,10 +37,12 @@ namespace Snake
 			{
 				if (walls.IsHit(snake) || snake.IsHitTail())
 				{
+					sounddead.Deads();
 					break;
 				}
 				if (snake.Eat(food))
 				{
+					soundeat.PlayEat();
 					food = foodCreator.CreateFood();
 					food.Draw();
 				}
