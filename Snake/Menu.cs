@@ -154,6 +154,7 @@ namespace Snake
             }
             void ShowSimplePercentage() //метод нашел в интернете, отрисовывает анимацию процентов
             {
+
                 for (int i = 0; i <= 100; i++) //цикл пока i не будет равна 100
                 {
                     Console.ForegroundColor = GetRandomConsoleColor(); //использование, созданного мной класса RndColor для того, чтобы проценты были разноцветными

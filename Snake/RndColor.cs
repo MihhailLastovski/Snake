@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-    public class RndColor : Score //наследник класса Score
+    public class RndColor
     {
 		public static Random rnd = new Random(); //переменная класса Random
 		public static ConsoleColor GetRandomConsoleColor() //метод типа данных ConsoleColor

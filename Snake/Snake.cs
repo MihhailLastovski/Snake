@@ -9,9 +9,11 @@ namespace Snake
 {
 	class Snake : Figure
 	{
+		int a = 0;
 		Direction direction; //переменная типа класса enum
-		public Snake(Point tail, int length, Direction _direction) //конструктор змейки, который берет значения: точку змейки(позиция и символ), длина, направление
+		public Snake(Point tail, int length, Direction _direction, int a) //конструктор змейки, который берет значения: точку змейки(позиция и символ), длина, направление
 		{
+			
 			direction = _direction; //переменная, которая равна направлению
 			pList = new List<Point>(); //создание списка
 			for (int i = 0; i < length; i++) //цикл пока i не будет равна длине змейки
@@ -20,8 +22,15 @@ namespace Snake
 				p.Move(i, direction); //смещение точки 
 				pList.Add(p); //добавление в список точки
 			}
+			
 		}
-
+		public int ScorePoint() 
+		{
+			a++; //прибавление очков
+			Console.SetCursorPosition(70, 23); //установка позиции курсора
+			Console.WriteLine($"Score: {a}"); //вывод
+			return a;
+		}
 		public void Move() //метод движения 
 		{
 			Point tail = pList.First(); //хвост змейки ставится на первую позицию в списке
