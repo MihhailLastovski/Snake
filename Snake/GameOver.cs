@@ -9,7 +9,6 @@ namespace Snake
 	class GameOver : RndColor
 	{
 		
-
 		public void WriteGameOver() //Метод для вывода информации
 		{
 			int xOffset = 25;
@@ -20,7 +19,7 @@ namespace Snake
 			System.Threading.Thread.Sleep(500); //таймер
 			WriteText("    G A M E    O V E R", xOffset + 1, yOffset++);
 			System.Threading.Thread.Sleep(500);
-			WriteText($"	    Score:{a.ToString()}", xOffset, yOffset++);
+			WriteText($"	    Score:{a}", xOffset, yOffset++);
 			WriteText($"	Press something", xOffset, yOffset++);
 			WriteText("============================", xOffset, yOffset++);
 		}

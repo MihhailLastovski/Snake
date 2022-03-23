@@ -18,7 +18,6 @@ namespace Snake
             Console.SetCursorPosition(70, 23); //установка позиции курсора
             Console.WriteLine($"Score: {a}"); //вывод
         }
-
     }
         
     
