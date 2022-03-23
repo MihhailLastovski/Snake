@@ -71,6 +71,7 @@ namespace Snake
 				}
 				GameOver gameOver = new GameOver(); //создание объекта класса GameOver
 				gameOver.WriteGameOver(scores); //использование метода
+				
 				Console.ReadLine(); //ожидание нажатия
 				Clear(); //очистка
 				Console.ForegroundColor = ConsoleColor.White; //изменение цвета

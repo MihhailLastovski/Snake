@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -49,6 +50,7 @@ namespace Snake
  _)       __) (_) | | | (/_   (_| (_) (_) (_|   _>  |_ |_| |   | _> 
                                _|                                   
 ");
+                Console.WriteLine("4--Result");
                 Console.WriteLine(@"
              _          
  |_|_ __ __ |_    o _|_ 
@@ -72,6 +74,9 @@ namespace Snake
                         GoodStuffs();
                         break;
                     case ConsoleKey.D4:
+                        ScoreText();
+                        break;
+                    case ConsoleKey.D5:
                         answer = true;
                         ExitCons();
                         Environment.Exit(0); //выход из консоли
@@ -246,6 +251,16 @@ namespace Snake
 ");
                 Thread.Sleep(1500);
 
+            }
+            void ScoreText() 
+            {
+                Console.Clear();
+                StreamReader from_file = new StreamReader(@"..\..\ScorePoint.txt");
+                string text = from_file.ReadToEnd();
+                Console.WriteLine(text);
+                from_file.Close();
+                Console.ReadKey(true);
+                Console.Clear();
             }
         }
 
