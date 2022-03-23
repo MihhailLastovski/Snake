@@ -14,7 +14,7 @@ namespace Snake
         public void Main() //основной метод
         {
             bool answer = false; //поле типа bool
-            Console.SetWindowSize(120, 40); //установка размера окна
+            Console.SetWindowSize(120, 46); //установка размера окна
             do //цикл do while для проверки выполнения условия
             {
                 //вывод надписей
@@ -50,11 +50,18 @@ namespace Snake
  _)       __) (_) | | | (/_   (_| (_) (_) (_|   _>  |_ |_| |   | _> 
                                _|                                   
 ");
-                Console.WriteLine("4--Result");
                 Console.WriteLine(@"
-             _          
- |_|_ __ __ |_    o _|_ 
-   |        |_ >< |  |_ 
+
+             _                   
+ |_|_ __ __ |_)  _   _     | _|_ 
+   |        | \ (/_ _> |_| |  |_ 
+                                 
+
+");
+                Console.WriteLine(@"
+  _        _          
+ |_ __ __ |_    o _|_ 
+  _)      |_ >< |  |_ 
                         
 ");
                 var input = Console.ReadKey(); //чтение нажатой клавиши

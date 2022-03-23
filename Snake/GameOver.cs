@@ -24,6 +24,7 @@ namespace Snake
 			System.Threading.Thread.Sleep(500);
 			WriteText($"	   Score: {a}", xOffset, yOffset++);
 			WriteText($"	Write ur name: ", xOffset, yOffset++);
+			Console.SetCursorPosition(35, 13);
 			name = Console.ReadLine();
 			WriteText($"	Press something", xOffset, yOffset++);
 			WriteText("============================", xOffset, yOffset++);
